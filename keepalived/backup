@@ -1,0 +1,15 @@
+global_defs {
+   router_id uBACKUP
+}
+ 
+vrrp_instance VI_1 {
+    state BACKUP
+    interface YOUR_INTERFACE
+    virtual_router_id 230
+    priority 100
+    advert_int 1
+ 
+   virtual_ipaddress {
+       X.X.X.X/32 dev YOUR_INTERFACE label YOUR_INTERFACE
+    }
+}
